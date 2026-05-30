@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --green: #00e87a;
+  --green-dim: #00c464;
+  --green-dark: #002a18;
+  --black: #080c0a;
+  --deep: #0d1410;
+  --text: #d4e8dc;
+  --muted: #7a9e8a;
+  --border: rgba(0,232,122,0.12);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+.font-display { font-family: 'DM Serif Display', serif; }
+.font-mono-custom { font-family: 'IBM Plex Mono', monospace; }
+
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+@keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+@keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
+@keyframes pulse-border {
+  0%,100% { box-shadow: 0 0 0 0 rgba(0,232,122,0.2); }
+  50% { box-shadow: 0 0 0 6px rgba(0,232,122,0); }
+}
+
+.animate-blink { animation: blink 1.4s ease-in-out infinite; }
+.animate-ticker { animation: ticker 35s linear infinite; }
+.animate-fade-up { opacity:0; transform:translateY(24px); animation: fadeUp 0.7s ease forwards; }
+.animate-pulse-border { animation: pulse-border 3s ease-in-out infinite; }
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #0d1410 inset !important;
+  -webkit-text-fill-color: #d4e8dc !important;
+}
